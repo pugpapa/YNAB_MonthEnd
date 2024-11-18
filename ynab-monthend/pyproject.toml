@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ynab-monthend"
+dynamic = ["version"]
+description = 'A configurable utility to automate month end activities in YNAB'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Jon", email = "jonathanlin1@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Jon/ynab-monthend#readme"
+Issues = "https://github.com/Jon/ynab-monthend/issues"
+Source = "https://github.com/Jon/ynab-monthend"
+
+[tool.hatch.version]
+path = "src/ynab_monthend/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/ynab_monthend tests}"
+
+[tool.coverage.run]
+source_pkgs = ["ynab_monthend", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/ynab_monthend/__about__.py",
+]
+
+[tool.coverage.paths]
+ynab_monthend = ["src/ynab_monthend", "*/ynab-monthend/src/ynab_monthend"]
+tests = ["tests", "*/ynab-monthend/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
