@@ -25,7 +25,8 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "ynab-python"
+  "ynab-api",
+  "todoist-api-python",
 ]
 
 [project.urls]
@@ -35,6 +36,12 @@ Source = "https://github.com/Jon/ynab-monthend"
 
 [tool.hatch.version]
 path = "src/ynab_monthend/__about__.py"
+
+[tool.hatch.envs.notebook]
+dependencies = [
+  "jupyter",
+  "ipython",
+]
 
 [tool.hatch.envs.types]
 extra-dependencies = [
