@@ -27,6 +27,7 @@ classifiers = [
 dependencies = [
   "ynab-api",
   "todoist-api-python",
+  "requests_oauthlib",
 ]
 
 [project.urls]
@@ -35,7 +36,7 @@ Issues = "https://github.com/Jon/ynab-monthend/issues"
 Source = "https://github.com/Jon/ynab-monthend"
 
 [tool.hatch.version]
-path = "src/ynab_monthend/__about__.py"
+path = "ynab_monthend/src/ynab_monthend/__about__.py"
 
 [tool.hatch.envs.notebook]
 dependencies = [
@@ -55,11 +56,11 @@ source_pkgs = ["ynab_monthend", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/ynab_monthend/__about__.py",
+  "ynab_monthend/src/ynab_monthend/__about__.py",
 ]
 
 [tool.coverage.paths]
-ynab_monthend = ["src/ynab_monthend", "*/ynab-monthend/src/ynab_monthend"]
+ynab_monthend = ["ynab_monthend/src/ynab_monthend", "*/ynab-monthend/src/ynab_monthend"]
 tests = ["tests", "*/ynab-monthend/tests"]
 
 [tool.coverage.report]

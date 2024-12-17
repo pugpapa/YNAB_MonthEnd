@@ -13,6 +13,8 @@ This project will [TBD: orchestration] jobs on [TBD: compute] to check at [TBD: 
 * Find the transactions from those payees
 * Call Todoist API to set a reminder to move [TBD: x%] of the transactions to a configured category
 
+Unfortunately, there are not any APIs that allow for moving money between categories.
+
 -----
 
 ## Table of Contents
